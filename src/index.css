@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary: #2563eb;
   --bg-color: #f8fafc;
@@ -6,89 +12,10 @@
   --white: #ffffff;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Base Layout */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-  background: var(--white);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.navbar h2 {
-  margin: 0;
-  color: var(--primary);
-}
-
-.navbar nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: var(--text-main);
-  font-weight: 500;
-}
-
-.navbar nav a.primary-btn {
-  color: var(--white);
-}
-
-.nav-signup-btn {
-  padding: 0.5rem 1rem;
-}
-
-.content {
-  flex: 1;
-  padding: 2rem 5%;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #0f172a;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-  line-height: 1.6;
-}
-
-.primary-btn {
-  background-color: var(--primary);
-  color: var(--white);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.primary-btn:hover {
-  background-color: #1d4ed8;
+@layer base {
+  body {
+    @apply font-sans antialiased text-secondary-900 bg-secondary-50;
+  }
 }
 
 /* Auth Pages */
@@ -177,4 +104,20 @@ body {
 
 .auth-link:hover {
   text-decoration: underline;
+}
+
+.primary-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: #1d4ed8;
 }
